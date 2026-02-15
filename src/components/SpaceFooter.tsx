@@ -13,7 +13,7 @@ const SpaceFooter = () => {
           "The cosmos is within us. We are made of star-stuff." — Carl Sagan
         </motion.p>
         <p className="text-muted-foreground/50 text-xs font-display tracking-widest uppercase">
-          © {new Date().getFullYear()} Space Explorer · Built with curiosity
+          © {new Date().getFullYear()} Yashraj Pavaskar · Built with curiosity
         </p>
       </div>
     </footer>
