@@ -2,6 +2,26 @@ import { motion } from "framer-motion";
 import AstronautFlipCard from "@/components/AstronautFlipCard";
 import astronautImg from "@/assets/astronaut-hero.png";
 
+const textContainer = {
+  hidden: { opacity: 1 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.06,
+    },
+  },
+};
+
+const letterVariant = {
+  hidden: { opacity: 0, y: 10 },
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
+};
+
+
+
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden px-4">
@@ -25,15 +45,50 @@ const Hero = () => {
           >
             Hello Guys !!!
           </motion.p>
-          <h1 className="text-5xl md:text-7xl font-display font-bold mb-4">
+          {/* <h1 className="text-5xl md:text-7xl font-display font-bold mb-4">
             <span className="gradient-text">Yashraj</span>{" "}
             <span className="text-foreground">Pavaskar</span>
-          </h1>
+          </h1> */}
+
+          <motion.h1
+            variants={textContainer}
+            initial="hidden"
+            animate="visible"
+            className="text-5xl md:text-7xl font-display font-bold mb-4 leading-tight"
+          >
+            {/* Yashraj */}
+            <div className="flex justify-center lg:justify-start">
+              {"Yashraj".split("").map((char, index) => (
+                <motion.span
+                  key={`y-${index}`}
+                  variants={letterVariant}
+                  className="gradient-text inline-block"
+                >
+                  {char}
+                </motion.span>
+              ))}
+            </div>
+
+            {/* Pavaskar */}
+            <div className="flex justify-center lg:justify-start">
+              {"Pavaskar".split("").map((char, index) => (
+                <motion.span
+                  key={`p-${index}`}
+                  variants={letterVariant}
+                  className="text-foreground inline-block"
+                >
+                  {char}
+                </motion.span>
+              ))}
+            </div>
+          </motion.h1>
+
+
           <p className="text-xl md:text-2xl text-muted-foreground font-body mb-2">
-            Aspiring Java Developer
+            Java Developer | Full-Stack Enthusiast
           </p>
           <p className="text-muted-foreground/70 text-lg mb-8 max-w-md mx-auto lg:mx-0">
-             A Java Spring Boot Developer and MCA student at Vellore Institute of Technology, Bhopal.
+            Building scalable applications with Spring Boot and React. Passionate about creating elegant solutions through code and turning ideas into impactful digital experiences.
           </p>
           <div className="flex gap-4 justify-center lg:justify-start">
               <a

@@ -31,7 +31,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between px-4 py-4">
         <a href="#home" className="font-display text-lg font-bold text-primary text-glow tracking-wider">
-          ✦ COSMO
+          ✦ YASH.DEV ✦
         </a>
 
         {/* Desktop */}
